@@ -1,0 +1,231 @@
+/* ===========================
+   ABOUT SECTION
+=========================== */
+
+.about{
+
+    padding:80px 8%;
+
+    background:#070b1a;
+
+    color:#fff;
+
+}
+
+.about-container{
+
+    max-width:1300px;
+
+    margin:auto;
+
+}
+
+.about-heading{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.about-heading h2{
+
+    font-size:3rem;
+
+    font-weight:800;
+
+    margin-bottom:14px;
+
+}
+
+.about-heading p{
+
+    color:#9ca3af;
+
+    font-size:1.05rem;
+
+}
+
+/* ===========================
+   GRID
+=========================== */
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    gap:60px;
+
+    align-items:start;
+
+}
+
+/* ===========================
+   LEFT
+=========================== */
+
+.about-left h3{
+
+    font-size:2.4rem;
+
+    line-height:1.4;
+
+    margin-bottom:28px;
+
+}
+
+.about-left span{
+
+    background:linear-gradient(90deg,#8b5cf6,#22d3ee);
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+}
+
+.about-left p{
+
+    color:#b8bcc8;
+
+    font-size:1.08rem;
+
+    line-height:2;
+
+    margin-bottom:20px;
+
+}
+
+/* ===========================
+   RIGHT
+=========================== */
+
+.about-right{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+.info-card{
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:24px;
+
+    backdrop-filter:blur(14px);
+
+    transition:.35s;
+
+}
+
+.info-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#22d3ee;
+
+    box-shadow:0 15px 35px rgba(34,211,238,.15);
+
+}
+
+.info-card svg{
+
+    font-size:2rem;
+
+    color:#22d3ee;
+
+    margin-bottom:18px;
+
+}
+
+.info-card h4{
+
+    font-size:1.15rem;
+
+    margin-bottom:8px;
+
+}
+
+.info-card p{
+
+    color:#b8bcc8;
+
+    font-size:.96rem;
+
+    line-height:1.6;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+.about{
+
+    padding:70px 8%;
+
+}
+
+.about-grid{
+
+    grid-template-columns:1fr;
+
+    gap:45px;
+
+}
+
+.about-right{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:650px){
+
+.about{
+
+    padding:60px 8%;
+
+}
+
+.about-heading{
+
+    margin-bottom:45px;
+
+}
+
+.about-heading h2{
+
+    font-size:2.3rem;
+
+}
+
+.about-left h3{
+
+    font-size:1.9rem;
+
+}
+
+.about-right{
+
+    grid-template-columns:1fr;
+
+}
+
+}

@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+background:#050816;
+
+font-family:'Space Grotesk',sans-serif;
+
+overflow-x:hidden;
+
+color:white;
+
+}
+
+::selection{
+
+background:#7c3aed;
+
+color:white;
+
+}
+/* ===========================
+   GLOBAL SMOOTH SCROLL
+=========================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+section{
+
+    scroll-margin-top:100px;
+
+}
