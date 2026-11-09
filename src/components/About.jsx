@@ -1,5 +1,7 @@
+
 import "../styles/about.css";
 import { motion } from "framer-motion";
+
 import {
   FaGraduationCap,
   FaBrain,
@@ -9,125 +11,111 @@ import {
   FaCertificate,
 } from "react-icons/fa";
 
-import "../styles/about.css";
+const aboutData = [
+  {
+    icon: FaGraduationCap,
+    title: "Education",
+    description: "B.Tech in Computer Science & Engineering",
+    detail: "2024 – 2028",
+  },
+  {
+    icon: FaBrain,
+    title: "AI & Machine Learning",
+    description: "Exploring Artificial Intelligence, ML and Generative AI.",
+    detail: "Learning & Building",
+  },
+  {
+    icon: FaLaptopCode,
+    title: "Development",
+    description: "Building full-stack applications and intelligent software solutions.",
+    detail: "Web Development",
+  },
+  {
+    icon: FaCode,
+    title: "Problem Solving",
+    description: "Practicing Data Structures, Algorithms and competitive programming.",
+    detail: "DSA Enthusiast",
+  },
+  {
+    icon: FaCertificate,
+    title: "Certifications",
+    description: "Oracle Cloud AI Foundations and Generative AI certifications.",
+    detail: "Oracle Certified",
+  },
+  {
+    icon: FaMapMarkerAlt,
+    title: "Location",
+    description: "Based in Greater Noida, Uttar Pradesh, India.",
+    detail: "India",
+  },
+];
 
 export default function About() {
   return (
     <section className="about" id="about">
+
       <div className="about-container">
 
         {/* Heading */}
 
         <motion.div
           className="about-heading"
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: .7 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          <h2>About Me</h2>
+          <h2>
+            About <span>Me</span>
+          </h2>
 
           <p>
-            Get to know me better
+            A little more about my journey, interests and what I do.
           </p>
         </motion.div>
 
-        {/* Content */}
+        {/* About Cards */}
 
         <div className="about-grid">
 
-          {/* Left */}
+          {aboutData.map((item, index) => {
+            const Icon = item.icon;
 
-          <motion.div
-            className="about-left"
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: .8 }}
-            viewport={{ once: true }}
-          >
+            return (
+              <motion.div
+                className="about-card"
+                key={item.title}
+                initial={{ opacity: 0, y: 35 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.1,
+                }}
+                viewport={{ once: true }}
+              >
 
-            <h3>
-              Building intelligent software with
-              <span> AI & Modern Technologies.</span>
-            </h3>
+                <div className="about-card-icon">
+                  <Icon />
+                </div>
 
-            <p>
-              I'm currently pursuing a B.Tech in Computer Science and Engineering
-              with a strong interest in Artificial Intelligence, Machine Learning
-              and Software Development.
-            </p>
+                <div className="about-card-content">
 
-            <p>
-              I enjoy solving Data Structures & Algorithms problems, building
-              modern web applications and exploring research-oriented AI
-              systems. My goal is to contribute to impactful technology while
-              continuously learning and growing as a developer.
-            </p>
+                  <h3>{item.title}</h3>
 
-          </motion.div>
+                  <p>{item.description}</p>
 
-          {/* Right */}
+                  <span>{item.detail}</span>
 
-          <motion.div
-            className="about-right"
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: .8 }}
-            viewport={{ once: true }}
-          >
+                </div>
 
-            <div className="info-card">
-              <FaGraduationCap />
-              <div>
-                <h4>Education</h4>
-                <p>B.Tech CSE (2024–2028)</p>
-              </div>
-            </div>
-
-            <div className="info-card">
-              <FaBrain />
-              <div>
-                <h4>Interest</h4>
-                <p>Artificial Intelligence & Machine Learning</p>
-              </div>
-            </div>
-
-            <div className="info-card">
-              <FaLaptopCode />
-              <div>
-                <h4>Focus</h4>
-                <p>Software Development & DSA</p>
-              </div>
-            </div>
-
-            <div className="info-card">
-              <FaCode />
-              <div>
-                <h4>Open Source</h4>
-                <p>GSSoC Contributor</p>
-              </div>
-            </div>
-
-            <div className="info-card">
-              <FaCertificate />
-              <div>
-                <h4>Certification</h4>
-                <p>Oracle Cloud AI Foundations</p>
-              </div>
-            </div>
-
-            <div className="info-card">
-              <FaMapMarkerAlt />
-              <div>
-                <h4>Location</h4>
-                <p>Greater Noida, India</p>
-              </div>
-            </div>
-
-          </motion.div>
+              </motion.div>
+            );
+          })}
 
         </div>
+
       </div>
+
     </section>
   );
 }
